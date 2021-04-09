@@ -12,11 +12,11 @@ require 'letsencrypt/redis'
 # :nodoc:
 module LetsEncrypt
   # Production mode API Endpoint
-  ENDPOINT = 'https://acme-v02.api.letsencrypt.org/directory'
+  #ENDPOINT = 'https://acme-v02.api.letsencrypt.org/directory'
 
   # Staging mode API Endpoint, the rate limit is higher
   # but got invalid certificate for testing
-  ENDPOINT_STAGING = 'https://acme-staging-v02.api.letsencrypt.org/directory'
+  #ENDPOINT_STAGING = 'https://acme-staging-v02.api.letsencrypt.org/directory'
   
   # Development endpoint usign Pebble.
   # FIXME add more details
