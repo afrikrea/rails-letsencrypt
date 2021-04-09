@@ -18,6 +18,11 @@ module LetsEncrypt
   # but got invalid certificate for testing
   ENDPOINT_STAGING = 'https://acme-staging-v02.api.letsencrypt.org/directory'
 
+  # Development endpoint API
+  # This here need the Pebble to work good
+  # https://github.com/letsencrypt/pebble
+  ENDPOINT_DEVELOPMENT = 'https://localhost:14000/dir'
+
   class << self
     # Create the ACME Client to Let's Encrypt
     def client
@@ -39,7 +44,15 @@ module LetsEncrypt
 
     # Get current using Let's Encrypt endpoint
     def directory
-      @endpoint ||= config.use_staging? ? ENDPOINT_STAGING : ENDPOINT
+      #@endpoint ||= config.use_staging? ? ENDPOINT_STAGING : ENDPOINT
+      @endpoint ||= case config.env
+      when :development
+        ENDPOINT_DEVELOPMENT
+      when :staging
+        ENDPOINT_STAGING
+      when :production
+        ENDPOINT
+      end
     end
 
     # Register a Let's Encrypt account

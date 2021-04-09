@@ -15,6 +15,9 @@ module LetsEncrypt
 
     config_accessor :save_to_redis
     config_accessor :redis_url
+    config_accessor :env do
+      :development
+    end
 
     # Returns true if enabled `save_to_redis` feature
     def use_redis?
