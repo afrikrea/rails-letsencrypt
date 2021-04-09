@@ -17,6 +17,11 @@ module LetsEncrypt
   # Staging mode API Endpoint, the rate limit is higher
   # but got invalid certificate for testing
   ENDPOINT_STAGING = 'https://acme-staging-v02.api.letsencrypt.org/directory'
+  
+  # Development endpoint usign Pebble.
+  # FIXME add more details
+  ENDPOINT = 'https://0.0.0.0:14000/dir'
+  ENDPOINT_STAGING = 'https://0.0.0.0:14000/dir'
 
   class << self
     # Create the ACME Client to Let's Encrypt
