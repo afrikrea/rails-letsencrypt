@@ -28,7 +28,10 @@ module LetsEncrypt
     def client
       @client ||= ::Acme::Client.new(
         private_key: private_key,
-        directory: directory
+        directory: directory,
+        connection_options: {
+          ssl: { verify: false }
+        }
       )
     end
 
