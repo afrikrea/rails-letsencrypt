@@ -21,7 +21,7 @@ module LetsEncrypt
   # Development endpoint API
   # This here need the Pebble to work good
   # https://github.com/letsencrypt/pebble
-  ENDPOINT_DEVELOPMENT = 'https://172.18.0.5:14000/dir'
+  ENDPOINT_DEVELOPMENT = 'https://localhost:14000/dir'
 
   class << self
     # Create the ACME Client to Let's Encrypt
